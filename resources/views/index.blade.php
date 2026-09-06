@@ -7,45 +7,16 @@
 <body>
     {{ $user['name'] }} <br/>
 
-    @if($user['admin'] === true)
-        Você é um administrador.
-    @elseif($user['id'] === 1)
-        Você é o primeiro usuário do sistema.
-    @else
-        Olá usuário.
-    @endif
-
-    @unless($user['admin'])
-        <p>Você não é um administrador.</p>
-    @endunless
+    @switch($user['id'])
+        @case(1)
+            <p>Usuário 1</p>
+            @break
+        @case(2)
+            <p>Usuário 2</p>
+            @break
+        @default
+            <p>Outro usuário</p>
+    @endswitch
     
-    @isset($user['name'])
-        Existe a propridade name no array user.
-    @endisset
-
-    <br/>
-
-    @empty($user['name'])
-        Nome não preenchido.
-    @endempty
-
-    <br/>
-
-    @auth
-        Usuário Logado
-    @endauth
-
-    @guest
-        Olá visitante!
-    @endguest
-
-    @production
-        <p>Estamos em produção.</p>
-    @endproduction
-
-    @env('local')
-        <p>Estamos em ambiente local.</p>
-    @endenv
-
 </body>
 </html>
