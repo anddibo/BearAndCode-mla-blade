@@ -3,67 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        .even {
+            color: #34e313;
+            font-weight: bold;
+        }
+
+        .odd {
+            color: #e31313;
+        }
+
+        .text {
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+    </style>
 </head>
 <body>
-    @for($i = 0; $i < 10; $i++)
-        {{ $i }} <br/>    
-    @endfor
-
-    <br/>
-    
-    @foreach($users as $user)
-        Usuário: {{ $user['id'] }} - {{ $user['name'] }} <br/>
+    @foreach ($users as $user)
+        <span @class(['text', 'even' => $loop->even, 'odd' => $loop->odd])>{{ $user['name'] }}</span><br/>
     @endforeach
 
     <br/>
 
-    @foreach($users as $user)
-        Index: {{ $loop->index }} <br/>
-        Iteration: {{ $loop->iteration }} <br/>
-        Remaining: {{ $loop->remaining }} <br/>
-
-        @if($loop->first)
-            Primeira iteração <br/>
-        @endif
-        @if($loop->last)
-            Última iteração <br/>
-        @endif
-
-        @if($loop->even)
-            Iteração PAR {{ $loop->iteration }} <br/>
-        @endif
-        @if($loop->odd)
-            Iteração ÍMPAR {{ $loop->iteration }} <br/>
-        @endif
-
+    @foreach ($users as $user)
+        <label>
+            <input name="checkbox" type="checkbox" @checked($loop->even)>
+            {{ $user['name'] }}
+        </label><br/>
     @endforeach
 
     <br/>
 
-    @foreach($users as $user)
-        @foreach($users as $user)
-            Iteração do pai: {{ $loop->parent->iteration }} <br/>
-            Iteração do filho: {{ $loop->iteration }} <br/>
-        @endforeach
-        <br/>
-    @endforeach
-
-    <br/>
-
-    @forelse($users2 as $user2)
-        Usuário: {{ $user2['id'] }} - {{ $user2['name'] }} <br/>
-    @empty
-        Nenhum usuário encontrado.
-    @endforelse
+    <select>
+        <option></option>
+        @foreach ($users as $user)
+            <option @selected($user['id'] == 5)>{{ $user['name'] }}</option>
+        @endforeach    
+    </select>
 
     <br/>
     <br/>
 
-    @while($count < 10)
-        Contador: {{ $count }} <br/>
-        @php
-            $count++;
-        @endphp
-    @endwhile
+    <input @readonly(true) value="TESTE" />
+
 </body>
 </html>
