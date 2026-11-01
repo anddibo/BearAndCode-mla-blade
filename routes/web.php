@@ -5,4 +5,5 @@ use App\Http\Controllers\BladeExamplesController;
 
 Route::controller(BladeExamplesController::class)->group(function () {
     Route::get('/', 'index');
+    Route::get('/second', 'secondPage');
 });

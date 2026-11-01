@@ -28,4 +28,9 @@ class BladeExamplesController extends Controller
             'count' => $count
         ]);
     }
+
+    public function secondPage()
+    {
+        return view('second', ['menu' => ['dashboard', 'about', 'users']]);
+    }
 }
