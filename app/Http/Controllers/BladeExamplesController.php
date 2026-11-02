@@ -2,29 +2,22 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
+
 class BladeExamplesController extends Controller
 {
     public function index()
     {
-        $users = [
-            ['user_id' => 1, 'name' => 'John Doe'],
-            ['user_id' => 2, 'name' => 'Jane Doe'],
-            ['user_id' => 3, 'name' => 'John Smith'],
-            ['user_id' => 4, 'name' => 'Jane Smith']
-        ];
-
-        $users2 = [];
-        $count = 0;
-
-        return view('index', [
-            'users' => $users,
-            'users2' => $users2,
-            'count' => $count
-        ]);
+        return view('index');
     }
 
-    public function secondPage()
+    public function store(Request $request)
     {
-        return view('second', ['menu' => ['dashboard', 'about', 'users']]);
+        $request->validate([
+            'email' => 'required|email',
+            'name' => 'required|min:3',
+        ]);
+
+        return redirect()->back()->with('success', 'Enviado com sucesso!');
     }
 }
