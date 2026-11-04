@@ -10,6 +10,16 @@
             @include('layout.notification', ['message' => Session::get('success')])
         @endif
 
+        @datetime(now()) {{-- Custom Blade directive example --}} <br>
+
+        @even(4)
+            OLA EU SOU UM NUMERO PAR
+        @endeven
+        <br>
+        @odd(5)
+            OLA EU SOU UM NUMERO IMPAR
+        @endodd
+
         <form action="{{ route('send-form') }}" method="POST">
             @csrf
 
