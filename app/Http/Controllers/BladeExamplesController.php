@@ -8,7 +8,13 @@ class BladeExamplesController extends Controller
 {
     public function index()
     {
-        return view('index');
+        $title = "Título do Alerta";
+        $message = "Mensagem do alerta";
+
+        return view('index', [
+            'title' => $title,
+            'message' => $message
+        ]);
     }
 
     public function store(Request $request)
