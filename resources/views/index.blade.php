@@ -8,16 +8,9 @@
 </head>
 <body class="min-h-screen">
     <div class="min-h-screen flex flex-col items-center justify-center">
+        
         <div class="px-32">
-            <main class="space-y-4">
-                <!-- 
-                <x-alert 
-                    type="error"
-                    :title="$title"
-                    :message="$message" 
-                />
-
-                <!-- Forma mais resumida de chamar o componente: quando o nome da variável é o mesmo do atributo -->
+            <main>
                 <x-alert 
                     type="success"
                     :$title
@@ -25,6 +18,7 @@
                 />
 
                 <x-alert 
+                    class="my-4"
                     type="error"
                     :$title
                     :$message 
@@ -37,6 +31,7 @@
                 />
             </main>
         </div>
+        
     </div>        
 </body>
 </html>

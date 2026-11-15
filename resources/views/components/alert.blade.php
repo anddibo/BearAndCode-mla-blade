@@ -1,4 +1,5 @@
-<div @class(["rounded-md p-4", $getBgClass])>
+<!-- faz um merge do atributo class do componente (class="mt-4") com o atributo class do elemento ("rounded-md p-4", $getBgClass) -->
+<div {{ $attributes->class(["rounded-md p-4", $getBgClass]) }}>
     <div class="flex">
         <div>
             <h3 @class(["text-sm font-medium", $getTitleClass])>{{ $title }}</h3>
