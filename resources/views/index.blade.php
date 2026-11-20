@@ -17,12 +17,6 @@
                 </x-button> 
             </main>
 
-            <main>
-                <x-button type="submit">
-                    Enviar
-                </x-button> 
-            </main>
-
         </div>
         
     </div>        
