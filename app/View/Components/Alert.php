@@ -11,15 +11,17 @@ class Alert extends Component
     public string $type;
     public string $title;
     public string $message;
+    public string $icon;
 
     /**
      * Create a new component instance.
      */
-    public function __construct(string $type, string $title, string $message)
+    public function __construct(string $type, string $title, string $message, string $icon = '')
     {
         $this->type = $type;
         $this->title = $title;
         $this->message = $message;
+        $this->icon = $icon;
     }
 
     public function getBgClass(){
