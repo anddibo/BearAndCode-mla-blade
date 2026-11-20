@@ -12,7 +12,14 @@
         <div class="px-32">
             
             <main>
+                <x-button type="submit" data-customerid="12345">
+                    Enviar
+                </x-button> 
+            </main>
+
+            <main>
                 <x-button type="submit">
+                    Enviar
                 </x-button> 
             </main>
 
