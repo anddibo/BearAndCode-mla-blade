@@ -10,26 +10,12 @@
     <div class="min-h-screen flex flex-col items-center justify-center">
         
         <div class="px-32">
+            
             <main>
-                <x-alert 
-                    type="success"
-                    :$title
-                    :$message 
-                />
-
-                <x-alert 
-                    class="my-4"
-                    type="error"
-                    :$title
-                    :$message 
-                />
-
-                <x-alert 
-                    type="warning"
-                    :$title
-                    :$message 
-                />
+                <x-button type="submit">
+                </x-button> 
             </main>
+
         </div>
         
     </div>        

@@ -1,4 +1,8 @@
-<!-- faz um merge do atributo class do componente (class="mt-4") com o atributo class do elemento ("rounded-md p-4", $getBgClass) -->
+<!-- 
+   faz uma concatenação do atributo class do componente (class="mt-4") 
+   com o atributo class do elemento ("rounded-md p-4", $getBgClass),
+   gerando o valor "rounded-md p-4 my-4 bg-green-50" (no caso do alert-success). 
+ -->
 <div {{ $attributes->class(["rounded-md p-4", $getBgClass]) }}>
     <div class="flex">
         <div>
