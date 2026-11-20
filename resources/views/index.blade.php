@@ -12,9 +12,19 @@
         <div class="px-32">
             
             <main>
-                <x-button type="submit" data-customerid="12345">
-                    Enviar
-                </x-button> 
+
+                <x-alert
+                    type="error"
+                    :$title
+                    :$message
+                >
+
+                    <x-button>
+                    </x-button> 
+
+                </x-alert>
+
+                
             </main>
 
         </div>
