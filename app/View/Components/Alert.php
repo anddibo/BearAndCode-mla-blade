@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
+use Illuminate\Support\Carbon;
 
 class Alert extends Component
 {
@@ -12,16 +13,18 @@ class Alert extends Component
     public string $title;
     public string $message;
     public string $icon;
+    public string $now;
 
     /**
      * Create a new component instance.
      */
-    public function __construct(string $type, string $title, string $message, string $icon = '')
+    public function __construct(Carbon $date, string $type, string $title, string $message, string $icon = '')
     {
         $this->type = $type;
         $this->title = $title;
         $this->message = $message;
         $this->icon = $icon;
+        $this->now = $date->now()->format('d/m/Y');
     }
 
     public function getBgClass(){
@@ -59,11 +62,6 @@ class Alert extends Component
      */
     public function render(): View|Closure|string
     {
-        return function (array $data) {
-            $data['title'] = 'Eu posso mudar o título aqui, se quiser';
-            dd($data);
-
-            /*return '<div>Eu posso retornar um trecho HTML e substituir todo o conteúdo</div>';*/
-        };
+        return view('components.alert');
     }
 }

@@ -4,6 +4,8 @@
             <div class="flex flex-row items-center space-x-2">
                 {{ $icon }}
                 <h3 @class(["text-sm font-medium", $getTitleClass])>{{ $title }}</h3>
+
+                <p @class(["text-sm font-medium", $getTitleClass])> {{ $now }} </p>
             </div>
             <div @class(["mt-2 text-sm", $getMessageClass])>
                 <span>{{ $message }}</span>
