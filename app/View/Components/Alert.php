@@ -59,6 +59,11 @@ class Alert extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.alert');
+        return function (array $data) {
+            $data['title'] = 'Eu posso mudar o título aqui, se quiser';
+            dd($data);
+
+            /*return '<div>Eu posso retornar um trecho HTML e substituir todo o conteúdo</div>';*/
+        };
     }
 }
